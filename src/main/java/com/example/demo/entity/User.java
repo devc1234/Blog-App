@@ -1,5 +1,6 @@
 package com.example.demo.entity;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -14,12 +15,16 @@ public class User {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
 	
+	@Column
 	private String name;
 	
+	@Column
 	private String email;
 	
-	private String passward;
+	@Column
+	private String password;
 	
+	@Column
 	private String about;
 
 	public int getId() {
@@ -47,11 +52,11 @@ public class User {
 	}
 
 	public String getPassward() {
-		return passward;
+		return getPassward();
 	}
 
 	public void setPassward(String passward) {
-		this.passward = passward;
+		this.password = passward;
 	}
 
 	public String getAbout() {
